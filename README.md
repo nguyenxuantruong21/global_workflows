@@ -18,7 +18,8 @@ Script tạo symlink vào `~/.claude/commands/`, liên kết `rules.md` và thê
 | `/plan [task]`          | Việc lớn, cần chia phase                           |
 | `/code [plan] [auto]`   | Làm theo plan; thêm `auto` để không dừng chờ duyệt |
 | `/fix [vấn đề]`         | Sửa lỗi hoặc việc nhỏ, không cần plan              |
+| `/review-code [target]` | Review thay đổi, không sửa file                    |
 
 Luồng thường dùng: `/plan` → `/code`. Việc nhỏ chỉ cần `/fix`.
 
-Plan được lưu trong `plans/` của từng dự án. Các workflow cũ nằm trong `archive/` và không được cài.
+Plan được lưu trong `plans/` của từng dự án.
