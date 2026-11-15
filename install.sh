@@ -1,10 +1,10 @@
 #!/bin/sh
-# Link commands and rules into ~/.claude. Never overwrites existing files.
+# Link commands, skills and rules into ~/.claude. Never overwrites existing files.
 set -eu
 
 src=$(cd "$(dirname "$0")" && pwd)
 dest="$HOME/.claude"
-mkdir -p "$dest/commands"
+mkdir -p "$dest/commands" "$dest/skills"
 
 link() {
   if [ -e "$2" ] || [ -L "$2" ]; then
@@ -17,6 +17,11 @@ link() {
 
 for file in "$src"/commands/*.md; do
   link "$file" "$dest/commands/$(basename "$file")"
+done
+for dir in "$src"/skills/*/; do
+  [ -d "$dir" ] || continue
+  dir=${dir%/}
+  link "$dir" "$dest/skills/$(basename "$dir")"
 done
 link "$src/rules.md" "$dest/workflow-rules.md"
 

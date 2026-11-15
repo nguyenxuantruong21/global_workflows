@@ -8,7 +8,7 @@ Target: $ARGUMENTS
 Review the given target. If none is given, review uncommitted changes. If there are none, review the latest commit. Do not edit files.
 
 1. Read the diff and enough surrounding code to understand it. Judge the code as if someone else wrote it, and do not rely on earlier claims that it works.
-2. Check for bugs, unhandled edge cases, security problems, data loss risks, missing tests and unneeded complexity.
+2. Check for bugs, unhandled edge cases, security problems, data loss risks, missing tests and unneeded complexity. Report clear violations of the `code-standards` skill as warnings.
 3. Report only real problems, most severe first:
 
 ```markdown
